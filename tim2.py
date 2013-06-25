@@ -76,7 +76,7 @@ for file_number in range(1, input_file_number + 1):
                     end_marker = marker_slot #set or overwrite end marker
                     marker_slot += 1
             middle_markers.append(int((end_marker + start_marker) / 2))
-            print end_marker, start_marker
+            print "Start marker: ", start_marker, "End marker: ", end_marker
             
 
         marker_slot += 1
@@ -94,8 +94,8 @@ for file_number in range(1, input_file_number + 1):
     for segment in range(len(middle_markers) - 1):
         length_10m.append(middle_markers[segment + 1] - middle_markers[segment])
 
-    print length_10m
-    print middle_markers
+    print "10m length ", length_10m
+    print "Middle markers", middle_markers
 
     #find shortest segment
     shortest_segment = 10000
@@ -125,6 +125,7 @@ for file_number in range(1, input_file_number + 1):
     for segment in range(len(length_10m)):
         print "Segment: %d" %segment
         divider = int(float(length_10m[segment]) / shortest_segment * expanding_factor)
+	print "Divider: ", divider
         dividers.append(divider)
         '''multiplier_2 = 0
         multiplier_1 = expanding_factor
@@ -137,7 +138,7 @@ for file_number in range(1, input_file_number + 1):
             for point in range(divider):
                 new_point += expanded_matrix[row][2]
                 row += 1
-            new_point /= divider
+	    new_point /= divider
             new_IR_points.append(new_point)
 
         #add together groups of points for ambient

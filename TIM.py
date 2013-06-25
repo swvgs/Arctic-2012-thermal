@@ -17,7 +17,6 @@ import csv
 
 #initializes matrices, lists, and variables
 thermal_data_matrix = []
-flag = []
 output_file_number = 1 
 search_row = 2
 start_line = 2
